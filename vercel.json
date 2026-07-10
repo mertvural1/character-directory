@@ -1,6 +1,7 @@
 {
+  "root": "apps/web",
   "buildCommand": "npm run codegen && npm run build -w @character-app/api && npm run build -w @character-app/web",
-  "outputDirectory": "apps/web/.next",
+  "outputDirectory": ".next",
   "installCommand": "npm install",
   "framework": "nextjs"
 }
