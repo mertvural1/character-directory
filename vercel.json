@@ -1,5 +1,0 @@
-{
-  "buildCommand": "npm run build -w @character-app/web",
-  "outputDirectory": "apps/web/.next",
-  "installCommand": "npm install"
-}
