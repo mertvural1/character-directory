@@ -2,7 +2,5 @@
   "buildCommand": "npm run codegen && npm run build -w @character-app/api && npm run build -w @character-app/web",
   "outputDirectory": "apps/web/.next",
   "installCommand": "npm install",
-  "framework": "nextjs",
-  "monorepoManager": "npm",
-  "regions": ["ist1"]
+  "framework": "nextjs"
 }
