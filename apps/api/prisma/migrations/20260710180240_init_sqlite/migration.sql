@@ -1,13 +1,11 @@
 -- CreateTable
 CREATE TABLE "Character" (
-    "id" SERIAL NOT NULL,
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "image" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "status" TEXT NOT NULL,
     "gender" TEXT NOT NULL,
-    "description" TEXT NOT NULL,
-
-    CONSTRAINT "Character_pkey" PRIMARY KEY ("id")
+    "description" TEXT NOT NULL
 );
 
 -- CreateIndex

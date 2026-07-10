@@ -90,7 +90,13 @@ const characters = [
 ] as const;
 
 async function main() {
-  await prisma.character.deleteMany();
+  const existingCount = await prisma.character.count();
+
+  if (existingCount > 0) {
+    console.log(`Skipped seeding; ${existingCount} characters already exist.`);
+    return;
+  }
+
   await prisma.character.createMany({ data: characters });
   console.log(`Seeded ${characters.length} characters.`);
 }

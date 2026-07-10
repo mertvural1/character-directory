@@ -1,7 +1,14 @@
-import 'dotenv/config';
+import { existsSync } from 'node:fs';
+import * as path from 'node:path';
+import { config } from 'dotenv';
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+
+const cwdEnvPath = path.resolve(process.cwd(), '.env');
+const workspaceEnvPath = path.resolve(process.cwd(), 'apps/api/.env');
+
+config({ path: existsSync(cwdEnvPath) ? cwdEnvPath : workspaceEnvPath });
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);

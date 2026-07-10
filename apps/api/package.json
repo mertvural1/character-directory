@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "dev": "nest start --watch",
+    "dev": "prisma db seed && nest start --watch",
     "build": "prisma generate && nest build",
     "start": "node dist/main.js",
     "prisma:generate": "prisma generate",
