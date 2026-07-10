@@ -1,0 +1,23 @@
+{
+  "name": "character-management-app",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,magenta \"npm run dev -w @character-app/api\" \"npm run dev -w @character-app/web\"",
+    "build": "npm run build -w @character-app/api && npm run build -w @character-app/web",
+    "setup": "npm run db:generate && npm run db:migrate && npm run db:seed",
+    "db:generate": "npm run prisma:generate -w @character-app/api",
+    "db:migrate": "npm run prisma:migrate -w @character-app/api",
+    "db:seed": "npm run prisma:seed -w @character-app/api",
+    "codegen": "npm run codegen -w @character-app/web"
+  },
+  "dependencies": {
+    "@as-integrations/express5": "^1.1.2"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

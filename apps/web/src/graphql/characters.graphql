@@ -1,0 +1,11 @@
+query Characters($filters: CharacterFiltersInput) {
+  characters(filters: $filters) {
+    id
+    image
+    name
+    status
+    gender
+    description
+  }
+}
+
