@@ -90,6 +90,7 @@ GraphQL Sandbox: http://localhost:4000/graphql
 
 ## GraphQL Query Example
 
+
 ``` graphql
 query {
   characters(filters: { status: ALIVE, search: "scientist" }) {
